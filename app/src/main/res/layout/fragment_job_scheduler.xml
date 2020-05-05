@@ -33,26 +33,13 @@
             app:layout_constraintStart_toEndOf="@+id/btn_schedule_job"
             app:layout_constraintTop_toTopOf="@+id/btn_schedule_job" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Logs"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_schedule_job" />
-
-        <TextView
-            android:id="@+id/txt_job_schedule_log"
+        <include
+            layout="@layout/log_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            android:hint="No logs yet"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_schedule_job" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import com.pallaw.servicesandbackgroundtasks.R
 import com.pallaw.servicesandbackgroundtasks.util.TextLogger
 import kotlinx.android.synthetic.main.fragment_job_scheduler.*
+import kotlinx.android.synthetic.main.log_view.*
 
 /**
  * A simple [Fragment] subclass.
@@ -54,7 +55,7 @@ class JobSchedulerFragment : Fragment(), View.OnClickListener {
     private fun cancelScheduledJob() {
         activity?.let {
             TextLogger.log(
-                txt_job_schedule_log,
+                txt_logs,
                 "Scheduled job cancelled"
             )
             val jobScheduler = it.getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
@@ -64,7 +65,7 @@ class JobSchedulerFragment : Fragment(), View.OnClickListener {
 
     private fun scheduleJob() {
         TextLogger.log(
-            txt_job_schedule_log,
+            txt_logs,
             "scheduleJob()"
         )
         activity?.let {
@@ -82,12 +83,12 @@ class JobSchedulerFragment : Fragment(), View.OnClickListener {
             val result = jobScheduler.schedule(jobInfo)
             if (result == JobScheduler.RESULT_SUCCESS) {
                 TextLogger.log(
-                    txt_job_schedule_log,
+                    txt_logs,
                     "Job Scheduled"
                 )
             } else {
                 TextLogger.log(
-                    txt_job_schedule_log,
+                    txt_logs,
                     "Job Scheduled"
                 )
             }
