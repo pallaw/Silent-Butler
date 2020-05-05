@@ -3,6 +3,8 @@
     package="com.pallaw.servicesandbackgroundtasks">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -20,11 +22,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <nav-graph android:value="@navigation/nav_graph" />
         </activity>
 
         <service
             android:name=".module.jobscheduler.MyJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service android:name=".module.foergroundservice.ForegroundService" />
 
     </application>
 
