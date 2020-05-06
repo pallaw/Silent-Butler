@@ -23,7 +23,7 @@ class LandingFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val buttons = listOf(btn_job_scheduler, btn_foreground_service)
+        val buttons = listOf(btn_job_scheduler, btn_foreground_service, btn_background_service)
         for (button in buttons) {
             button.setOnClickListener(this)
         }
@@ -37,6 +37,10 @@ class LandingFragment : Fragment(), View.OnClickListener {
 
             btn_foreground_service -> {
                 findNavController().navigate(R.id.action_landingFragment_to_foregroundServiceFragment)
+            }
+
+            btn_background_service -> {
+                findNavController().navigate(R.id.action_landingFragment_to_backgroundService)
             }
         }
     }
